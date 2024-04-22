@@ -1,9 +1,9 @@
 import unittest
-import Tree
+from tree import Tree
 
 class TestTree(unittest.TestCase):
     def test_find(self):
-        tree = Tree.Tree()
+        tree = Tree()
         tree.add(1)
         tree.add(2)
         tree.add(0)
