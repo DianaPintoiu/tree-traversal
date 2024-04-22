@@ -62,27 +62,71 @@ class Tree:
             return self._find(data, node.right)
 
     def deleteTree(self):
-        # TODO 1
-        self.root = None
+            """
+            Deletes the entire tree by setting the root node to None.
+
+            Parameters:
+                None
+
+            Returns:
+                None
+            """
+            self.root = None
 
     def printTree(self):
-        # TODO 1
-        if self.root is not None:
-            self._printInorderTree(self.root)
+            """
+            Prints the elements of the tree in inorder traversal.
+
+            Returns:
+                None
+            """
+            if self.root is not None:
+                self._printInorderTree(self.root)
 
     def _printInorderTree(self, node):
-        # TODO 1
-        if node is not None:
-            self._printInorderTree(node.left)
-            print(str(node.data) + ' ')
-            self._printInorderTree(node.right)
+            """
+            Prints the elements of the binary tree in inorder traversal.
+
+            Parameters:
+                node (TreeNode): The root node of the binary tree.
+
+            Returns:
+                None
+            """
+            if node is not None:
+                self._printInorderTree(node.left)
+                print(str(node.data) + ' ')
+                self._printInorderTree(node.right)
 
     def _printPreorderTree(self, node):
-        # TODO 2
-        pass
+        """
+        Prints the nodes of the tree in preorder traversal.
+
+        Parameters:
+        - node: The current node being visited.
+
+        Returns:
+        - None
+        """
+        if node is not None:
+            print(str(node.data) + ' ')
+            self._printPreorderTree(node.left)
+            self._printPreorderTree(node.right)
+        
 
     def _printPostorderTree(self, node):
-        # TODO 2
-        pass
+        """
+        Prints the nodes of the tree in postorder traversal.
+
+        Parameters:
+        - node: The root node of the tree (or subtree) to be traversed.
+
+        Returns:
+        None
+        """
+        if node is not None:
+            self._printPostorderTree(node.left)
+            self._printPostorderTree(node.right)
+            print(str(node.data) + ' ')
 
 
